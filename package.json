@@ -35,6 +35,7 @@
     "predeploy": "cross-env BASE_URL=\"/livecodes/\" npm run build",
     "predeploy:no-docs": "cross-env DOCS_BASE_URL=null npm run build:app",
     "deploy": "gh-pages -m \"[ci skip] Updates\" -d build --nojekyll",
+    "deploy:github": "bash ./scripts/deploy-github.sh",
     "fix": "run-s fix:*",
     "fix:i18n-export": "npm run i18n-export",
     "fix:prettier": "prettier src --write",

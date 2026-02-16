@@ -1,0 +1,5 @@
+const e=require("fs"),i=require("path"),r=`// @ts-nocheck
+// This comment is added by i18n-exclude script and should be automatically removed after build.
+// If you see this comment in the file, it means there is something wrong during the build process.
+
+`,t=i.resolve("src/livecodes/i18n/locales");require.main===module&&(()=>{if("true"===process.env.BUILD_INCLUDE_LOCALES)return;let s=process.argv[2];console.log(`Running i18n-exclude in ${s} phase`),e.readdirSync(t,{withFileTypes:!0}).filter(e=>e.isDirectory()&&"en"!==e.name).map(e=>i.join(t,e.name)).forEach(t=>{for(let n of e.readdirSync(t).filter(e=>e.endsWith(".ts")).map(e=>i.join(t,e))){let i=e.readFileSync(n,"utf8");"pre"===s?i.startsWith(r)||(i=r+i):"post"===s&&(i=i.replace(r,"")),e.writeFileSync(n,i,"utf8")}})})(),module.exports={TS_NOCHECK:r};

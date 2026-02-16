@@ -118,7 +118,7 @@ const getEnvVars = (/** @type {boolean} */ devMode) => {
     'process.env.BROADCAST_PORT': `"${selfHostedBroadcastPort}"`,
     'process.env.SANDBOX_HOST_NAME': `"${selfHostedSandboxHostName}"`,
     'process.env.SANDBOX_PORT': `"${selfHostedSandboxPort}"`,
-    'process.env.FIREBASE_CONFIG': `"${firebaseConfig}"`,
+    'process.env.FIREBASE_CONFIG': JSON.stringify(firebaseConfig),
     define: 'undefined', // prevent using AMD (e.g. in lz-string),
   };
 };

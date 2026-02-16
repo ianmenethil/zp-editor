@@ -8,7 +8,7 @@
 
 #### Defined in
 
-[models.ts:2031](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L2031)
+[models.ts:2031](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L2031)
 
 ***
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[models.ts:2032](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L2032)
+[models.ts:2032](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L2032)
 
 ***
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[models.ts:2033](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L2033)
+[models.ts:2033](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L2033)
 
 ***
 
@@ -38,4 +38,4 @@
 
 #### Defined in
 
-[models.ts:2034](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L2034)
+[models.ts:2034](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L2034)

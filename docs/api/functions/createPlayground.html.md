@@ -25,7 +25,7 @@ The [embed options](https://livecodes.io/docs/sdk/js-ts#embed-options) for the p
 
 ### Defined in
 
-[index.ts:26](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/index.ts#L26)
+[index.ts:26](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/index.ts#L26)
 
 ## createPlayground(options)
 
@@ -41,4 +41,4 @@ The [embed options](https://livecodes.io/docs/sdk/js-ts#embed-options) for the p
 
 ### Defined in
 
-[index.ts:30](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/index.ts#L30)
+[index.ts:30](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/index.ts#L30)

@@ -23,7 +23,7 @@ If supplied with an invalid URL, an error is thrown.
 
 #### Defined in
 
-[models.ts:314](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L314)
+[models.ts:314](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L314)
 
 ***
 
@@ -43,7 +43,7 @@ If supplied and is not an object or a valid URL, an error is thrown.
 
 #### Defined in
 
-[models.ts:346](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L346)
+[models.ts:346](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L346)
 
 ***
 
@@ -61,7 +61,7 @@ false
 
 #### Defined in
 
-[models.ts:352](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L352)
+[models.ts:352](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L352)
 
 ***
 
@@ -73,7 +73,7 @@ A resource to [import](https://livecodes.io/docs/features/import) (from any of t
 
 #### Defined in
 
-[models.ts:357](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L357)
+[models.ts:357](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L357)
 
 ***
 
@@ -95,7 +95,7 @@ false
 
 #### Defined in
 
-[models.ts:367](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L367)
+[models.ts:367](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L367)
 
 ***
 
@@ -117,7 +117,7 @@ Sets how the playground loads:
 
 #### Defined in
 
-[models.ts:377](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L377)
+[models.ts:377](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L377)
 
 ***
 
@@ -3874,7 +3874,7 @@ Sets result page [zoom level](https://livecodes.io/docs/features/result#result-p
 
 #### Defined in
 
-[models.ts:338](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L338)
+[models.ts:338](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L338)
 
 ***
 
@@ -3887,7 +3887,7 @@ Allowed valued can be found [here](https://livecodes.io/docs/api/internal/type-a
 
 #### Defined in
 
-[models.ts:383](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L383)
+[models.ts:383](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L383)
 
 ***
 
@@ -3912,4 +3912,4 @@ When set to `"headless"`, the playground is loaded in [headless mode](https://li
 
 #### Defined in
 
-[models.ts:396](https://github.com/ianmenethil/zp-editor/blob/6a8e5b580d5811702260a191bb7f04210a4a89bd/src/sdk/models.ts#L396)
+[models.ts:396](https://github.com/ianmenethil/zp-editor/blob/1579cfca106bbe6c7106b94242b546519f27b84e/src/sdk/models.ts#L396)

@@ -1,6 +1,5 @@
 name: Deploy
 
-# on push to main deploy (as self-hosted build) to github pages
 on:
   push:
     branches:
@@ -9,23 +8,17 @@ on:
 env:
   NODE_VERSION: 24.x
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: "--max_old_space_size=4096"
     steps:
-      - name: Generate Github Token for CI Bot
-        uses: actions/create-github-app-token@v1
-        id: generate-token
-        with:
-          app-id: ${{ secrets.CI_APP_ID }}
-          private-key: ${{ secrets.CI_APP_PRIVATE_KEY }}
-
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          token: ${{ steps.generate-token.outputs.token }}
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -42,6 +35,6 @@ jobs:
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${{github.repository}}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
-          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SELF_HOSTED: "true"
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}

@@ -37,6 +37,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SELF_HOSTED: "true"
-          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+          FIREBASE_CONFIG: '{"apiKey":"AIzaSyBBjBFx10SJcNSc9fdr6kVqcx3ydml0QMk","authDomain":"livecodes-43380.firebaseapp.com","projectId":"livecodes-43380","storageBucket":"livecodes-43380.firebasestorage.app","messagingSenderId":"356498821161","appId":"1:356498821161:web:a828a7eae68a936fc68c38"}'
           SANDBOX_HOST_NAME: "livecodes-sandbox.pages.dev"
           SANDBOX_PORT: "443"

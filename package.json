@@ -90,7 +90,7 @@
     "lz-string": "1.4.4",
     "monaco-editor": "0.48.0",
     "patch-package": "7.0.2",
-    "prismjs": "1.29.0",
+    "prismjs": "1.30.0",
     "split.js": "1.6.5",
     "yjs": "13.5.40"
   },

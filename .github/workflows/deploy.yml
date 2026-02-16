@@ -38,3 +38,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SELF_HOSTED: "true"
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+          SANDBOX_HOST_NAME: "livecodes-sandbox.pages.dev"
+          SANDBOX_PORT: "443"

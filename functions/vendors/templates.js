@@ -1,5 +1,5 @@
 var getTemplateName = (_, templateName) => templateName;
-var d={name:"angular",title:getTemplateName("templates.starter.angular","Angular Starter"),thumbnail:"assets/templates/angular.svg",activeEditor:"script",markup:{language:"html",content:`<app>Loading...</app>
+var d={name:"angular",aliases:["ng"],title:getTemplateName("templates.starter.angular","Angular Starter"),thumbnail:"assets/templates/angular.svg",activeEditor:"script",markup:{language:"html",content:`<app>Loading...</app>
 `},style:{language:"css",content:""},script:{language:"typescript",content:`
 import { Component, Input, NgModule, enableProdMode } from '@angular/core@12.2.13';
 import { CommonModule } from '@angular/common@12.2.13';
@@ -70,7 +70,7 @@ class AppModule {}
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err: Error) => console.error(err));
-`.trimStart()},customSettings:{typescript:{experimentalDecorators:!0}}};var u={name:"assemblyscript",title:getTemplateName("templates.starter.assemblyscript","AssemblyScript Starter"),thumbnail:"assets/templates/assemblyscript.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},customSettings:{typescript:{experimentalDecorators:!0}}};var u={name:"assemblyscript",aliases:["as"],title:getTemplateName("templates.starter.assemblyscript","AssemblyScript Starter"),thumbnail:"assets/templates/assemblyscript.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/assemblyscript.svg" />
@@ -358,7 +358,7 @@ var view = new AppView({ model: counter });
     </statement>
   </block>
 </xml>
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var v={name:"bootstrap",title:getTemplateName("templates.starter.bootstrap","Bootstrap Starter"),thumbnail:"assets/templates/bootstrap.svg",activeEditor:"markup",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var v={name:"bootstrap",aliases:["bs"],title:getTemplateName("templates.starter.bootstrap","Bootstrap Starter"),thumbnail:"assets/templates/bootstrap.svg",activeEditor:"markup",markup:{language:"html",content:`
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -520,7 +520,7 @@ export fn main argv:
   document.querySelector "#counter-button"
     -> activateBtn
     -> .addEventListener "click" onBtnClick
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var w={name:"clojurescript",title:getTemplateName("templates.starter.clojurescript","ClojureScript Starter"),thumbnail:"assets/templates/cljs.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var w={name:"clojurescript",aliases:["cljs"],title:getTemplateName("templates.starter.clojurescript","ClojureScript Starter"),thumbnail:"assets/templates/cljs.svg",activeEditor:"script",markup:{language:"html",content:`
 <div id="app">Loading...</div>
 `.trimStart()},style:{language:"css",content:`
 .container,
@@ -560,7 +560,7 @@ export fn main argv:
 (print (str "Hello, " title "!"))
 (defonce root (createRoot (js/document.querySelector "#app")))
 (.render root #jsx [Counter #js {:name title}])
-`.trimStart()}};var S={name:"coffeescript",title:getTemplateName("templates.starter.coffeescript","CoffeeScript Starter"),thumbnail:"assets/templates/coffeescript.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var S={name:"coffeescript",aliases:["coffee"],title:getTemplateName("templates.starter.coffeescript","CoffeeScript Starter"),thumbnail:"assets/templates/coffeescript.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/coffeescript.svg" />
@@ -589,7 +589,7 @@ increment = counter 0
 
 button.addEventListener('click',
   -> counterElement.innerText = increment())
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var k={name:"commonlisp",title:getTemplateName("templates.starter.commonlisp","Common Lisp Starter"),thumbnail:"assets/templates/commonlisp.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var k={name:"commonlisp",aliases:["lisp"],title:getTemplateName("templates.starter.commonlisp","Common Lisp Starter"),thumbnail:"assets/templates/commonlisp.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1 id="title">Hello, World!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/commonlisp.svg" />
@@ -625,7 +625,7 @@ button.addEventListener('click',
 
 (#j:console:clear)
 (write "Hello, Common Lisp!")
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var _={name:"cpp",title:getTemplateName("templates.starter.cpp","C++ Starter"),thumbnail:"assets/templates/cpp.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var _={name:"cpp",aliases:["c++"],title:getTemplateName("templates.starter.cpp","C++ Starter"),thumbnail:"assets/templates/cpp.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="name">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/cpp.svg" />
@@ -693,7 +693,7 @@ int main() {
 
     return 0;
 }
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var j={name:"cpp-wasm",aliases:["clang"],title:getTemplateName("templates.starter.cpp-wasm","C++ (Wasm) Starter"),thumbnail:"assets/templates/cpp.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var j={name:"cpp-wasm",aliases:["clang","c++-wasm"],title:getTemplateName("templates.starter.cpp-wasm","C++ (Wasm) Starter"),thumbnail:"assets/templates/cpp.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="name">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/cpp.svg" />
@@ -764,7 +764,7 @@ int main() {
 
     return 0;
 }
-`.trimStart()}};var T={name:"csharp-wasm",title:"C# (Wasm) Starter",thumbnail:"assets/templates/csharp.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var T={name:"csharp-wasm",aliases:["c#-wasm"],title:getTemplateName("templates.starter.csharp-wasm","C# (Wasm) Starter"),thumbnail:"assets/templates/csharp.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="name">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/csharp.svg" />
@@ -836,7 +836,7 @@ class Program
         Console.WriteLine(count);
     }
 }
-`.trimStart()}};var C={name:"d3",title:"D3 Starter",thumbnail:"assets/templates/d3.svg",activeEditor:"script",markup:{language:"html",content:`<div id="chart">Loading...</div>
+`.trimStart()}};var C={name:"d3",title:getTemplateName("templates.starter.d3","D3 Starter"),thumbnail:"assets/templates/d3.svg",activeEditor:"script",markup:{language:"html",content:`<div id="chart">Loading...</div>
 `},style:{language:"css",content:`
 .bar {
   fill: steelblue;
@@ -1063,7 +1063,7 @@ svg
 (global counter (Counter:new nil))
 (global button (document:querySelector "#counter-button"))
 (button:addEventListener :click (fn [] (counter:increment) (counter:show)))
-`.trimStart()}};var $=["esm.sh","skypack","esm.run","jsdelivr.esm","fastly.jsdelivr.esm","gcore.jsdelivr.esm","testingcf.jsdelivr.esm","jsdelivr.b-cdn.esm","jspm"],B=["jsdelivr","fastly.jsdelivr","unpkg","gcore.jsdelivr","testingcf.jsdelivr","jsdelivr.b-cdn","npmcdn"],M=["jsdelivr.gh","fastly.jsdelivr.gh","statically","gcore.jsdelivr.gh","testingcf.jsdelivr.gh","jsdelivr.b-cdn.gh"],r={getModuleUrl:(e,{isModule:s=!0,defaultCDN:i="esm.sh",external:o}={})=>{e=e.replace(/#nobundle/g,"");let a=n=>!o||!n.includes("https://esm.sh")?n:n.includes("?")?`${n}&external=${o}`:`${n}?external=${o}`,l=q(e,s,i);return l?a(l):s?a("https://esm.sh/"+e):"https://cdn.jsdelivr.net/npm/"+e},getUrl:(e,s)=>e.startsWith("http")||e.startsWith("data:")?e:q(e,!1,s||qt())||e,cdnLists:{npm:B,module:$,gh:M},checkCDNs:async(e,s)=>{let i=[s,...r.cdnLists.npm].filter(Boolean);for(let o of i)try{if((await fetch(r.getUrl(e,o),{method:"HEAD"})).ok)return o}catch{}return r.cdnLists.npm[0]}},qt=()=>{if(globalThis.appCDN)return globalThis.appCDN;try{return new URL(location.href).searchParams.get("appCDN")||r.cdnLists.npm[0]}catch{return r.cdnLists.npm[0]}},q=(e,s,i)=>{let o=s&&e.startsWith("unpkg:")?"?module":"";e.startsWith("gh:")?e=e.replace("gh",M[0]):e.includes(":")||(e=(i||(s?$[0]:B[0]))+":"+e);for(let a of $t){let[l,n]=a;if(l.test(e))return e.replace(l,n)+o}return null},$t=[[/^(esm\.sh:)(.+)/i,"https://esm.sh/$2"],[/^(npm:)(.+)/i,"https://esm.sh/$2"],[/^(node:)(.+)/i,"https://esm.sh/$2"],[/^(jsr:)(.+)/i,"https://esm.sh/jsr/$2"],[/^(pr:)(.+)/i,"https://esm.sh/pr/$2"],[/^(pkg\.pr\.new:)(.+)/i,"https://esm.sh/pkg.pr.new/$2"],[/^(skypack:)(.+)/i,"https://cdn.skypack.dev/$2"],[/^(jsdelivr:)(.+)/i,"https://cdn.jsdelivr.net/npm/$2"],[/^(fastly\.jsdelivr:)(.+)/i,"https://fastly.jsdelivr.net/npm/$2"],[/^(gcore\.jsdelivr:)(.+)/i,"https://gcore.jsdelivr.net/npm/$2"],[/^(testingcf\.jsdelivr:)(.+)/i,"https://testingcf.jsdelivr.net/npm/$2"],[/^(jsdelivr\.b-cdn:)(.+)/i,"https://jsdelivr.b-cdn.net/npm/$2"],[/^(jsdelivr\.gh:)(.+)/i,"https://cdn.jsdelivr.net/gh/$2"],[/^(fastly\.jsdelivr\.gh:)(.+)/i,"https://fastly.jsdelivr.net/gh/$2"],[/^(gcore\.jsdelivr\.gh:)(.+)/i,"https://gcore.jsdelivr.net/gh/$2"],[/^(testingcf\.jsdelivr\.gh:)(.+)/i,"https://testingcf.jsdelivr.net/gh/$2"],[/^(jsdelivr\.b-cdn\.gh:)(.+)/i,"https://jsdelivr.b-cdn.net/gh/$2"],[/^(statically:)(.+)/i,"https://cdn.statically.io/gh/$2"],[/^(esm\.run:)(.+)/i,"https://esm.run/$2"],[/^(jsdelivr\.esm:)(.+)/i,"https://cdn.jsdelivr.net/npm/$2/+esm"],[/^(fastly\.jsdelivr\.esm:)(.+)/i,"https://fastly.jsdelivr.net/npm/$2/+esm"],[/^(gcore\.jsdelivr\.esm:)(.+)/i,"https://gcore.jsdelivr.net/npm/$2/+esm"],[/^(testingcf\.jsdelivr\.esm:)(.+)/i,"https://testingcf.jsdelivr.net/npm/$2/+esm"],[/^(jsdelivr\.b-cdn\.esm:)(.+)/i,"https://jsdelivr.b-cdn.net/npm/$2/+esm"],[/^(jspm:)(.+)/i,"https://jspm.dev/$2"],[/^(esbuild:)(.+)/i,"https://esbuild.vercel.app/$2"],[/^(bundle\.run:)(.+)/i,"https://bundle.run/$2"],[/^(unpkg:)(.+)/i,"https://unpkg.com/$2"],[/^(npmcdn:)(.+)/i,"https://npmcdn.com/$2"],[/^(bundlejs:)(.+)/i,"https://deno.bundlejs.com/?file&q=$2"],[/^(bundle:)(.+)/i,"https://deno.bundlejs.com/?file&q=$2"],[/^(deno:)(.+)/i,"https://deno.bundlejs.com/?file&q=https://deno.land/x/$2/mod.ts"],[/^(https:\/\/deno\.land\/.+)/i,"https://deno.bundlejs.com/?file&q=$1"],[/^(github:|https:\/\/github\.com\/)(.[^\/]+?)\/(.[^\/]+?)\/(?!releases\/)(?:(?:blob|raw)\/)?(.+?\/.+)/i,"https://deno.bundlejs.com/?file&q=https://cdn.jsdelivr.net/gh/$2/$3@$4"],[/^(gist\.github:)(.+?\/[0-9a-f]+\/raw\/(?:[0-9a-f]+\/)?.+)$/i,"https://gist.githack.com/$2"],[/^(gitlab:|https:\/\/gitlab\.com\/)([^\/]+.*\/[^\/]+)\/(?:raw|blob)\/(.+?)(?:\?.*)?$/i,"https://deno.bundlejs.com/?file&q=https://gl.githack.com/$2/raw/$3"],[/^(bitbucket:|https:\/\/bitbucket\.org\/)([^\/]+\/[^\/]+)\/(?:raw|src)\/(.+?)(?:\?.*)?$/i,"https://deno.bundlejs.com/?file&q=https://bb.githack.com/$2/raw/$3"],[/^(bitbucket:)snippets\/([^\/]+\/[^\/]+)\/revisions\/([^\/\#\?]+)(?:\?[^#]*)?(?:\#file-(.+?))$/i,"https://bb.githack.com/!api/2.0/snippets/$2/$3/files/$4"],[/^(bitbucket:)snippets\/([^\/]+\/[^\/\#\?]+)(?:\?[^#]*)?(?:\#file-(.+?))$/i,"https://bb.githack.com/!api/2.0/snippets/$2/HEAD/files/$3"],[/^(bitbucket:)\!api\/2.0\/snippets\/([^\/]+\/[^\/]+\/[^\/]+)\/files\/(.+?)(?:\?.*)?$/i,"https://bb.githack.com/!api/2.0/snippets/$2/files/$3"],[/^(api\.bitbucket:)2.0\/snippets\/([^\/]+\/[^\/]+\/[^\/]+)\/files\/(.+?)(?:\?.*)?$/i,"https://bb.githack.com/!api/2.0/snippets/$2/files/$3"],[/^(rawgit:)(.+?\/[0-9a-f]+\/raw\/(?:[0-9a-f]+\/)?.+)$/i,"https://gist.githack.com/$2"],[/^(rawgit:|https:\/\/raw\.githubusercontent\.com)(\/[^\/]+\/[^\/]+|[0-9A-Za-z-]+\/[0-9a-f]+\/raw)\/(.+)/i,"https://deno.bundlejs.com/?file&q=https://raw.githack.com/$2/$3"]];var{getUrl:Bt,getModuleUrl:ee}=r;var c=Bt("gh:live-codes/gleam-precompiled@v0.5.0/");var m=c+"build/packages/plinth/src/plinth/",p=c+"build/dev/javascript/plinth/plinth/",P={name:"gleam",title:getTemplateName("templates.starter.gleam","Gleam Starter"),thumbnail:"assets/templates/gleam.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var $=["esm.sh","skypack","esm.run","jsdelivr.esm","fastly.jsdelivr.esm","gcore.jsdelivr.esm","testingcf.jsdelivr.esm","jsdelivr.b-cdn.esm","jspm"],B=["jsdelivr","fastly.jsdelivr","unpkg","gcore.jsdelivr","testingcf.jsdelivr","jsdelivr.b-cdn","npmcdn"],M=["jsdelivr.gh","fastly.jsdelivr.gh","statically","gcore.jsdelivr.gh","testingcf.jsdelivr.gh","jsdelivr.b-cdn.gh"],r={getModuleUrl:(e,{isModule:s=!0,defaultCDN:i="esm.sh",external:o}={})=>{e=e.replace(/#nobundle/g,"");let a=n=>!o||!n.includes("https://esm.sh")?n:n.includes("?")?`${n}&external=${o}`:`${n}?external=${o}`,l=q(e,s,i);return l?a(l):s?a("https://esm.sh/"+e):"https://cdn.jsdelivr.net/npm/"+e},getUrl:(e,s)=>e.startsWith("http")||e.startsWith("data:")?e:q(e,!1,s||qt())||e,cdnLists:{npm:B,module:$,gh:M},checkCDNs:async(e,s)=>{let i=[s,...r.cdnLists.npm].filter(Boolean);for(let o of i)try{if((await fetch(r.getUrl(e,o),{method:"HEAD"})).ok)return o}catch{}return r.cdnLists.npm[0]}},qt=()=>{if(globalThis.appCDN)return globalThis.appCDN;try{return new URL(location.href).searchParams.get("appCDN")||r.cdnLists.npm[0]}catch{return r.cdnLists.npm[0]}},q=(e,s,i)=>{let o=s&&e.startsWith("unpkg:")?"?module":"";e.startsWith("gh:")?e=e.replace("gh",M[0]):e.includes(":")||(e=(i||(s?$[0]:B[0]))+":"+e);for(let a of $t){let[l,n]=a;if(l.test(e))return e.replace(l,n)+o}return null},$t=[[/^(esm\.sh:)(.+)/i,"https://esm.sh/$2"],[/^(npm:)(.+)/i,"https://esm.sh/$2"],[/^(node:)(.+)/i,"https://esm.sh/$2"],[/^(jsr:)(.+)/i,"https://esm.sh/jsr/$2"],[/^(pr:)(.+)/i,"https://esm.sh/pr/$2"],[/^(pkg\.pr\.new:)(.+)/i,"https://esm.sh/pkg.pr.new/$2"],[/^(skypack:)(.+)/i,"https://cdn.skypack.dev/$2"],[/^(jsdelivr:)(.+)/i,"https://cdn.jsdelivr.net/npm/$2"],[/^(fastly\.jsdelivr:)(.+)/i,"https://fastly.jsdelivr.net/npm/$2"],[/^(gcore\.jsdelivr:)(.+)/i,"https://gcore.jsdelivr.net/npm/$2"],[/^(testingcf\.jsdelivr:)(.+)/i,"https://testingcf.jsdelivr.net/npm/$2"],[/^(jsdelivr\.b-cdn:)(.+)/i,"https://jsdelivr.b-cdn.net/npm/$2"],[/^(jsdelivr\.gh:)(.+)/i,"https://cdn.jsdelivr.net/gh/$2"],[/^(fastly\.jsdelivr\.gh:)(.+)/i,"https://fastly.jsdelivr.net/gh/$2"],[/^(gcore\.jsdelivr\.gh:)(.+)/i,"https://gcore.jsdelivr.net/gh/$2"],[/^(testingcf\.jsdelivr\.gh:)(.+)/i,"https://testingcf.jsdelivr.net/gh/$2"],[/^(jsdelivr\.b-cdn\.gh:)(.+)/i,"https://jsdelivr.b-cdn.net/gh/$2"],[/^(statically:)(.+)/i,"https://cdn.statically.io/gh/$2"],[/^(esm\.run:)(.+)/i,"https://esm.run/$2"],[/^(jsdelivr\.esm:)(.+)/i,"https://cdn.jsdelivr.net/npm/$2/+esm"],[/^(fastly\.jsdelivr\.esm:)(.+)/i,"https://fastly.jsdelivr.net/npm/$2/+esm"],[/^(gcore\.jsdelivr\.esm:)(.+)/i,"https://gcore.jsdelivr.net/npm/$2/+esm"],[/^(testingcf\.jsdelivr\.esm:)(.+)/i,"https://testingcf.jsdelivr.net/npm/$2/+esm"],[/^(jsdelivr\.b-cdn\.esm:)(.+)/i,"https://jsdelivr.b-cdn.net/npm/$2/+esm"],[/^(jspm:)(.+)/i,"https://jspm.dev/$2"],[/^(esbuild:)(.+)/i,"https://esbuild.vercel.app/$2"],[/^(bundle\.run:)(.+)/i,"https://bundle.run/$2"],[/^(unpkg:)(.+)/i,"https://unpkg.com/$2"],[/^(npmcdn:)(.+)/i,"https://npmcdn.com/$2"],[/^(bundlejs:)(.+)/i,"https://deno.bundlejs.com/?file&q=$2"],[/^(bundle:)(.+)/i,"https://deno.bundlejs.com/?file&q=$2"],[/^(deno:)(.+)/i,"https://deno.bundlejs.com/?file&q=https://deno.land/x/$2/mod.ts"],[/^(https:\/\/deno\.land\/.+)/i,"https://deno.bundlejs.com/?file&q=$1"],[/^(github:|https:\/\/github\.com\/)(.[^\/]+?)\/(.[^\/]+?)\/(?!releases\/)(?:(?:blob|raw)\/)?(.+?\/.+)/i,"https://deno.bundlejs.com/?file&q=https://cdn.jsdelivr.net/gh/$2/$3@$4"],[/^(gist\.github:)(.+?\/[0-9a-f]+\/raw\/(?:[0-9a-f]+\/)?.+)$/i,"https://gist.githack.com/$2"],[/^(gitlab:|https:\/\/gitlab\.com\/)([^\/]+.*\/[^\/]+)\/(?:raw|blob)\/(.+?)(?:\?.*)?$/i,"https://deno.bundlejs.com/?file&q=https://gl.githack.com/$2/raw/$3"],[/^(bitbucket:|https:\/\/bitbucket\.org\/)([^\/]+\/[^\/]+)\/(?:raw|src)\/(.+?)(?:\?.*)?$/i,"https://deno.bundlejs.com/?file&q=https://bb.githack.com/$2/raw/$3"],[/^(bitbucket:)snippets\/([^\/]+\/[^\/]+)\/revisions\/([^\/\#\?]+)(?:\?[^#]*)?(?:\#file-(.+?))$/i,"https://bb.githack.com/!api/2.0/snippets/$2/$3/files/$4"],[/^(bitbucket:)snippets\/([^\/]+\/[^\/\#\?]+)(?:\?[^#]*)?(?:\#file-(.+?))$/i,"https://bb.githack.com/!api/2.0/snippets/$2/HEAD/files/$3"],[/^(bitbucket:)\!api\/2.0\/snippets\/([^\/]+\/[^\/]+\/[^\/]+)\/files\/(.+?)(?:\?.*)?$/i,"https://bb.githack.com/!api/2.0/snippets/$2/files/$3"],[/^(api\.bitbucket:)2.0\/snippets\/([^\/]+\/[^\/]+\/[^\/]+)\/files\/(.+?)(?:\?.*)?$/i,"https://bb.githack.com/!api/2.0/snippets/$2/files/$3"],[/^(rawgit:)(.+?\/[0-9a-f]+\/raw\/(?:[0-9a-f]+\/)?.+)$/i,"https://gist.githack.com/$2"],[/^(rawgit:|https:\/\/raw\.githubusercontent\.com)(\/[^\/]+\/[^\/]+|[0-9A-Za-z-]+\/[0-9a-f]+\/raw)\/(.+)/i,"https://deno.bundlejs.com/?file&q=https://raw.githack.com/$2/$3"]];var{getUrl:Bt,getModuleUrl:ee}=r;var c=Bt("gh:live-codes/gleam-precompiled@v0.5.0/");var p=c+"build/packages/plinth/src/plinth/",m=c+"build/dev/javascript/plinth/plinth/",P={name:"gleam",title:getTemplateName("templates.starter.gleam","Gleam Starter"),thumbnail:"assets/templates/gleam.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1 id="title">Hello, World!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/gleam.svg" />
@@ -1131,7 +1131,7 @@ pub fn hello(str: String) -> String
 // npm module
 @external(javascript, "npm:cowsay2", "say")
 pub fn cowsay(str: String) -> String
-`.trimStart()},customSettings:{imports:{"my_pkg/greet.js":c+"demo/greet.js"},gleam:{modules:{"plinth/browser/document":{srcUrl:m+"browser/document.gleam",compiledUrl:p+"browser/document.mjs"},"plinth/browser/element":{srcUrl:m+"browser/element.gleam",compiledUrl:p+"browser/element.mjs"},"plinth/browser/event":{srcUrl:m+"browser/event.gleam",compiledUrl:p+"browser/event.mjs"}}}}};var R={name:"go",title:getTemplateName("templates.starter.go","Go Starter"),thumbnail:"assets/templates/go.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},customSettings:{imports:{"my_pkg/greet.js":c+"demo/greet.js"},gleam:{modules:{"plinth/browser/document":{srcUrl:p+"browser/document.gleam",compiledUrl:m+"browser/document.mjs"},"plinth/browser/element":{srcUrl:p+"browser/element.gleam",compiledUrl:m+"browser/element.mjs"},"plinth/browser/event":{srcUrl:p+"browser/event.gleam",compiledUrl:m+"browser/event.mjs"}}}}};var R={name:"go",aliases:["golang"],title:getTemplateName("templates.starter.go","Go Starter"),thumbnail:"assets/templates/go.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/go.svg" />
@@ -1194,7 +1194,7 @@ func greet() {
 		fmt.Println("Good evening")
 	}
 }
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var N={name:"go-wasm",title:getTemplateName("templates.starter.go-wasm","Go (Wasm) Starter"),thumbnail:"assets/templates/go.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var N={name:"go-wasm",aliases:["golang-wasm"],title:getTemplateName("templates.starter.go-wasm","Go (Wasm) Starter"),thumbnail:"assets/templates/go.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Go (Wasm)</h1>
   <img class="logo" alt="Go logo" src="{{ __livecodes_baseUrl__ }}assets/templates/go.svg" />
@@ -1443,7 +1443,7 @@ public class Main {
     System.out.println(count);
   }
 }
-`.trimStart()}};var I={name:"javascript",title:getTemplateName("templates.starter.javascript","JavaScript Starter"),thumbnail:"assets/templates/javascript.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var I={name:"javascript",aliases:["js"],title:getTemplateName("templates.starter.javascript","JavaScript Starter"),thumbnail:"assets/templates/javascript.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/javascript.svg" />
@@ -1819,7 +1819,7 @@ export class SignalExample extends SignalWatcher(LitElement) {
     }
   \`;
 }
-`.trimStart()},customSettings:{typescript:{experimentalDecorators:!0,useDefineForClassFields:!1}}};var V={name:"livescript",title:getTemplateName("templates.starter.livescript","LiveScript Starter"),thumbnail:"assets/templates/livescript.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},customSettings:{typescript:{experimentalDecorators:!0,useDefineForClassFields:!1}}};var V={name:"livescript",aliases:["ls"],title:getTemplateName("templates.starter.livescript","LiveScript Starter"),thumbnail:"assets/templates/livescript.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/livescript.svg" />
@@ -1984,7 +1984,7 @@ end
   <p>You clicked {counter} times.</p>
   <button @click={increment}>Click me</button>
 </div>
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var Z={name:"markdown",title:getTemplateName("templates.starter.markdown","Markdown Starter"),thumbnail:"assets/templates/markdown.svg",activeEditor:"markup",markup:{language:"markdown",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var Z={name:"markdown",aliases:["md"],title:getTemplateName("templates.starter.markdown","Markdown Starter"),thumbnail:"assets/templates/markdown.svg",activeEditor:"markup",markup:{language:"markdown",content:`
 # Project Title
 
 One Paragraph of project description goes here
@@ -2118,7 +2118,7 @@ export function Counter() {
     </div>
   );
 }
-`.trimStart()}};var Q={name:"minizinc",title:getTemplateName("templates.starter.minizinc","MiniZinc Starter"),thumbnail:"assets/templates/minizinc.png",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var Q={name:"minizinc",aliases:["mzn"],title:getTemplateName("templates.starter.minizinc","MiniZinc Starter"),thumbnail:"assets/templates/minizinc.png",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/minizinc.png" title="MiniZinc" />
   <button id="button" onclick="run()">Run</button>
@@ -2349,7 +2349,7 @@ let _ =
   | None  -> ()
 
 let _ = print_endline "Hello, OCaml!"
-`.trimStart()},customSettings:{imports:{react:"https://esm.sh/react@18.3.1","react/":"https://esm.sh/react@18.3.1/","react-dom":"https://esm.sh/react-dom@18.3.1"}}};var et={name:"perl",title:getTemplateName("templates.starter.perl","Perl Starter"),thumbnail:"assets/templates/perl.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},customSettings:{imports:{react:"https://esm.sh/react@18.3.1","react/":"https://esm.sh/react@18.3.1/","react-dom":"https://esm.sh/react-dom@18.3.1"}}};var et={name:"perl",aliases:["pl"],title:getTemplateName("templates.starter.perl","Perl Starter"),thumbnail:"assets/templates/perl.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/perl.svg" />
@@ -2407,7 +2407,7 @@ if ($hour < 12) {
 } else {
   print "Good evening";
 }
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var st={name:"phaser",title:"Phaser Starter",thumbnail:"assets/templates/phaser.png",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var st={name:"phaser",title:getTemplateName("templates.starter.phaser","Phaser Starter"),thumbnail:"assets/templates/phaser.png",activeEditor:"script",markup:{language:"html",content:`
 <div id="app">
   <div id="game-container"></div>
 </div>
@@ -2663,7 +2663,7 @@ if ($time < 12) {
 $date = date("l jS \\of F, Y");
 
 echo $greeting . "<br>Today is:<br>" . $date;
-`.trimStart()}};var rt={name:"postgresql",title:getTemplateName("templates.starter.postgresql","PostgreSQL Starter"),thumbnail:"assets/templates/postgresql.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var rt={name:"postgresql",aliases:["pg","postgres","pgsql"],title:getTemplateName("templates.starter.postgresql","PostgreSQL Starter"),thumbnail:"assets/templates/postgresql.svg",activeEditor:"script",markup:{language:"html",content:`
 <div id="output">
   <details open>
     <summary>Tables</summary>
@@ -2931,7 +2931,7 @@ aunt(X, Y):- parent(Z, Y),
 ancestor(X, Y):- parent(X, Y).
 ancestor(X, Y):- parent(X, Z),
     ancestor(Z, Y).
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var lt={name:"python",title:getTemplateName("templates.starter.python","Python Starter"),thumbnail:"assets/templates/python.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var lt={name:"python",aliases:["py"],title:getTemplateName("templates.starter.python","Python Starter"),thumbnail:"assets/templates/python.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1 id="header">Hello, World!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/python.svg" />
@@ -2971,7 +2971,7 @@ elif 12 <= current_time < 18:
       print('Good afternoon')
 else:
       print('Good evening')
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var ct={name:"python-wasm",aliases:["pyodide"],title:"Python (Wasm) Starter",thumbnail:"assets/templates/python.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var ct={name:"python-wasm",aliases:["pyodide","py-wasm"],title:getTemplateName("templates.starter.python-wasm","Python (Wasm) Starter"),thumbnail:"assets/templates/python.svg",activeEditor:"script",markup:{language:"html",content:`
 <h1 id="title">Hello, World!</h1>
 <div id="loading">Loading...</div>
 <div id="plots"></div>
@@ -3034,7 +3034,7 @@ loading.innerHTML = ""
 
 # avoid leaving figures open
 plt.close("all")
-`.trimStart()}};var mt={name:"r",title:getTemplateName("templates.starter.r","R Starter"),thumbnail:"assets/templates/r.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var pt={name:"r",aliases:["r-lang","rlang"],title:getTemplateName("templates.starter.r","R Starter"),thumbnail:"assets/templates/r.svg",activeEditor:"script",markup:{language:"html",content:`
 <div id="output">Loading...</div>
 
 <script>
@@ -3082,7 +3082,7 @@ legend("topleft",
 #   summarize(mean_price = mean(price)) %>%
 #   ggplot(aes(x = cut, y = mean_price, fill = cut)) +
 #       geom_bar(stat = "identity")
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var pt={name:"react-native",title:getTemplateName("templates.starter.react-native","React Native Starter"),thumbnail:"assets/templates/react.svg",activeEditor:"script",markup:{language:"html",content:""},style:{language:"css",content:""},script:{language:"react-native",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var mt={name:"react-native",title:getTemplateName("templates.starter.react-native","React Native Starter"),thumbnail:"assets/templates/react.svg",activeEditor:"script",markup:{language:"html",content:""},style:{language:"css",content:""},script:{language:"react-native",content:`
 import { useState } from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 
@@ -3331,7 +3331,7 @@ Console.log("Hello, ReScript!")
     };
   <\/script>
 </counter>
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var bt={name:"ruby",title:getTemplateName("templates.starter.ruby","Ruby Starter"),thumbnail:"assets/templates/ruby.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var bt={name:"ruby",aliases:["rb"],title:getTemplateName("templates.starter.ruby","Ruby Starter"),thumbnail:"assets/templates/ruby.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/ruby.svg" />
@@ -3375,7 +3375,7 @@ elsif current_time < 18
 else
     puts "Good evening, " + msg
 end
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var ft={name:"ruby-wasm",title:getTemplateName("templates.starter.ruby-wasm","Ruby (Wasm) Starter"),thumbnail:"assets/templates/ruby.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var ft={name:"ruby-wasm",aliases:["rb-wasm"],title:getTemplateName("templates.starter.ruby-wasm","Ruby (Wasm) Starter"),thumbnail:"assets/templates/ruby.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/ruby.svg" />
@@ -3778,7 +3778,7 @@ import Counter from "./Component.svelte";
   <p>You clicked {counter} times.</p>
   <button on:click={increment}>Click me</button>
 </div>
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var _t={name:"tailwindcss",title:getTemplateName("templates.starter.tailwindcss","Tailwind CSS Starter"),thumbnail:"assets/templates/tailwindcss.svg",activeEditor:"markup",markup:{language:"html",content:`
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var _t={name:"tailwindcss",aliases:["tw","tailwind"],title:getTemplateName("templates.starter.tailwindcss","Tailwind CSS Starter"),thumbnail:"assets/templates/tailwindcss.svg",activeEditor:"markup",markup:{language:"html",content:`
 <div class="relative grid min-h-screen grid-cols-[1fr_2.5rem_auto_2.5rem_1fr] grid-rows-[1fr_1px_auto_1px_1fr] bg-white [--pattern-fg:var(--color-gray-950)]/5 dark:bg-gray-950 dark:[--pattern-fg:var(--color-white)]/10">
   <div class="col-start-3 row-start-3 flex max-w-lg flex-col bg-gray-100 p-2 dark:bg-white/10">
     <div class="rounded-xl bg-white p-10 text-sm/7 text-gray-700 dark:bg-gray-950 dark:text-gray-300">
@@ -3951,7 +3951,7 @@ button:addEventListener("click", function()
   count = increment(count)
   counter_el.innerHTML = ("You clicked %d times."):format(count)
 end)
-`.trimStart()}};var Ct={name:"typescript",title:getTemplateName("templates.starter.typescript","TypeScript Starter"),thumbnail:"assets/templates/typescript.svg",activeEditor:"script",markup:{language:"html",content:`
+`.trimStart()}};var Ct={name:"typescript",aliases:["ts"],title:getTemplateName("templates.starter.typescript","TypeScript Starter"),thumbnail:"assets/templates/typescript.svg",activeEditor:"script",markup:{language:"html",content:`
 <div class="container">
   <h1>Hello, <span id="title">World</span>!</h1>
   <img class="logo" alt="logo" src="{{ __livecodes_baseUrl__ }}assets/templates/typescript.svg" />
@@ -4135,4 +4135,4 @@ new Vue({
     (i32.add (local.get $0) (i32.const 1))
   )
 )
-`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var bo=[b,I,Ct,dt,pt,Ut,d,at,kt,xt,G,St,K,_t,yt,U,v,g,ht,J,D,h,z,A,O,C,st,Et,S,V,y,x,H,gt,ut,tt,lt,ct,mt,bt,ft,R,N,ot,nt,_,j,W,T,et,X,F,Tt,L,Y,vt,k,w,P,jt,Z,u,Lt,wt,rt,it,Q,f,E];export{bo as starterTemplates};
+`.trimStart()},stylesheets:[],scripts:[],cssPreset:"",imports:{},types:{}};var bo=[b,I,Ct,dt,mt,Ut,d,at,kt,xt,G,St,K,_t,yt,U,v,g,ht,J,D,h,z,A,O,C,st,Et,S,V,y,x,H,gt,ut,tt,lt,ct,pt,bt,ft,R,N,ot,nt,_,j,W,T,et,X,F,Tt,L,Y,vt,k,w,P,jt,Z,u,Lt,wt,rt,it,Q,f,E];export{bo as starterTemplates};

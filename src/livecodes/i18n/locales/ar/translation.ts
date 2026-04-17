@@ -508,6 +508,7 @@ const translation: I18nTranslation = {
     heading: 'إعدادات المحرر',
     lineNumbers: 'إظهار أرقام الأسطر',
     lineNumbersRelative: 'أرقام الأسطر النسبية*',
+    minimap: 'تفعيل الخريطة المصغرة *',
     notAvailableInCodeJar: 'غير متوفر في CodeJar',
     preview: 'معاينة',
     semicolons: 'التنسيق: استخدام الفواصل المنقوطة',

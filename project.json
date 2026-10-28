@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "zp-editor",
+  "name": "ZenPay Editor",
+  "slug": "zp-editor",
+  "description": "Public browser-based code/content editor built on LiveCodes.io framework, VS Code-style client interface.",
+  "summary": "Client-side code playground (forked from LiveCodes) supporting 90+ languages/frameworks with Monaco editor, WebWorker-based compilation, npm ecosystem SDK for embedding, 40+ UI languages, real-time broadcast/sync, and self-hosted deployment via Docker or Cloudflare Pages.",
+  "visibility": "external",
+  "type": "client-app",
+  "lane": "standalone-apps",
+  "status": [
+    "Released",
+    "Maintenance"
+  ],
+  "tech": {
+    "language": [
+      "TypeScript"
+    ],
+    "framework": null,
+    "runtime": "Browser",
+    "packageManager": "npm"
+  },
+  "connections": [],
+  "links": {
+    "github": "https://github.com/ianmenethil/zp-editor",
+    "local": "F:/_ZP-Main/apps-2/zp-editor"
+  },
+  "notes": [
+    "Upstream: https://github.com/live-codes/livecodes",
+    "Deployed at: editor.zenithpayments.support (Cloudflare Pages)",
+    "Server subdirectory uses Express + Socket.IO + Valkey for share/broadcast features"
+  ]
+}

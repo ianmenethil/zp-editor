@@ -17,6 +17,7 @@ export const exportGithubGist = async (
   if (!user) return;
   const files = getFiles(config, user, deps);
   const response = await saveGist(config, user, files);
+  if (!response.ok) throw new Error('Failed to create GitHub gist');
   const gistInfo = await response.json();
 
   if (gistInfo.id) {

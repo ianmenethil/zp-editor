@@ -16,6 +16,8 @@ interface ShareService {
 
 const dpasteService = {
   getProject: async (id: string): Promise<ConfigWithResult> => {
+    // dpaste ids are 9 chars; forward longer ids to the service that owns them
+    if (id.length >= 11) return apiService.getProject(id);
     try {
       const res = await fetch(dpasteGetUrl + id + '.txt');
       if (!res.ok) return {};
@@ -25,24 +27,19 @@ const dpasteService = {
     }
   },
   shareProject: async (config: ConfigWithResult): Promise<string> => {
-    try {
-      const res = await fetch(dpastePostUrl, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'User-Agent': 'LiveCodes / https://livecodes.io/',
-        },
-        body: `content=${encodeURIComponent(JSON.stringify(config))}&title=${encodeURIComponent(
-          config.title || '',
-        )}&syntax=json&expiry_days=365`,
-      });
-      if (!res.ok) return '';
-      const url = await res.text();
-      return url.replace(dpasteGetUrl, '');
-    } catch {
-      return '';
-    }
+    const res = await fetch(dpastePostUrl, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `content=${encodeURIComponent(JSON.stringify(config))}&title=${encodeURIComponent(
+        config.title || '',
+      )}&syntax=json&expiry_days=365`,
+    });
+    if (!res.ok) throw new Error('Failed to share project');
+    const url = await res.text();
+    return url.replace(dpasteGetUrl, '');
   },
 };
 
@@ -50,6 +47,7 @@ const apiService = {
   getProject: async (id: string): Promise<ConfigWithResult> => {
     // for backward compatibility
     if (id.length < 11) return dpasteService.getProject(id);
+    if (id.length >= 14) return selfHostedService.getProject(id);
     try {
       const res = await fetch(apiUrl + '?id=' + id);
       if (!res.ok) return {};
@@ -59,18 +57,14 @@ const apiService = {
     }
   },
   shareProject: async (config: ConfigWithResult): Promise<string> => {
-    if (!allowedOrigin()) return '';
-    try {
-      const res = await fetch(apiUrl, {
-        method: 'POST',
-        mode: 'cors',
-        body: JSON.stringify(config),
-      });
-      if (!res.ok) return '';
-      return res.text();
-    } catch {
-      return '';
-    }
+    if (!allowedOrigin()) throw new Error('Share service unavailable');
+    const res = await fetch(apiUrl, {
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify(config),
+    });
+    if (!res.ok) throw new Error('Failed to share project');
+    return res.text();
   },
 };
 
@@ -87,17 +81,13 @@ const selfHostedService = {
     }
   },
   shareProject: async (config: ConfigWithResult): Promise<string> => {
-    try {
-      const res = await fetch(selfHostedUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(config),
-      });
-      if (!res.ok) return '';
-      return res.text();
-    } catch {
-      return '';
-    }
+    const res = await fetch(selfHostedUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(config),
+    });
+    if (!res.ok) throw new Error('Failed to share project');
+    return res.text();
   },
 };
 

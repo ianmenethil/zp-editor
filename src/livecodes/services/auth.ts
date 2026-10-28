@@ -4,10 +4,12 @@ import { decrypt, encrypt } from '../storage';
 import { getImportInstance } from '../utils';
 
 type FirebaseUser = import('firebase/auth').User;
+// undocumented on FirebaseUser — accessed via a narrow type instead of `any`
+type ReloadableUser = { reloadUserInfo?: { screenName?: string } };
 interface AuthService {
   load(): Promise<void>;
   getUser(): Promise<User | void>;
-  signIn(scopes?: GithubScope[]): Promise<User | void>;
+  signIn(scopes: GithubScope[]): Promise<User | void>;
   signOut(): Promise<void>;
   isLoggedIn(): boolean;
 }
@@ -76,7 +78,7 @@ export const createAuthService = (isEmbed: boolean): AuthService => {
         });
       });
     },
-    async signIn(scopes: GithubScope[] = ['gist', 'repo']): Promise<User | void> {
+    async signIn(scopes: GithubScope[]): Promise<User | void> {
       if (!auth) {
         await this.load();
       }
@@ -142,7 +144,7 @@ const fetchUserName = async (user: FirebaseUser) => {
     return fromLocalStorage;
   }
 
-  const fromUserInfo = (user as any).reloadUserInfo?.screenName;
+  const fromUserInfo = (user as ReloadableUser).reloadUserInfo?.screenName;
   if (fromUserInfo) {
     saveUsername(uid, fromUserInfo);
     return fromUserInfo;
@@ -154,8 +156,10 @@ const fetchUserName = async (user: FirebaseUser) => {
       Authorization: 'token ' + (await getToken(uid)),
     },
   });
+  if (!response.ok) return;
   const userInfo = await response.json();
   const login = userInfo.login;
+  if (!login) return;
   saveUsername(uid, login);
   return login;
 };

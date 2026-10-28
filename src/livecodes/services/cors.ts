@@ -7,12 +7,12 @@ const proxyUrl = 'https://api.allorigins.win/raw?url=';
 
 export const corsService = {
   fetch: async (url: string, options?: RequestInit) => {
+    if (process.env.SELF_HOSTED === 'true') {
+      // self-hosted deploys have no backend — the relative proxy does not exist
+      return fetchWithHandler(url, options);
+    }
     const corsUrl =
-      (process.env.SELF_HOSTED === 'true'
-        ? selfHostedUrl
-        : allowedOrigin()
-          ? corsApiUrl
-          : proxyUrl) + encodeURIComponent(url);
+      (allowedOrigin() ? corsApiUrl : proxyUrl) + encodeURIComponent(url);
     if (whitelistTarget(url)) {
       return fetchWithHandler(corsUrl, options);
     }

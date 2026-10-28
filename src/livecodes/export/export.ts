@@ -8,9 +8,18 @@ import { exportSrc } from './export-src';
 
 export type ExportType = 'json' | 'src' | 'html' | 'codepen' | 'jsfiddle' | 'githubGist';
 type ExportFunctions = {
-  [key in ExportType]: (config: Config, payload?: any, baseUrl?: string) => void;
+  [key in ExportType]: (
+    config: Config,
+    payload?: any,
+    baseUrl?: string,
+  ) => void | Promise<void>;
 };
-export const exportConfig = (config: Config, baseUrl: string, type: ExportType, payload?: any) => {
+export const exportConfig = async (
+  config: Config,
+  baseUrl: string,
+  type: ExportType,
+  payload?: any,
+) => {
   const exportFns: ExportFunctions = {
     json: exportJSON,
     src: exportSrc,
@@ -20,5 +29,5 @@ export const exportConfig = (config: Config, baseUrl: string, type: ExportType, 
     githubGist: exportGithubGist,
   };
 
-  exportFns[type](config, payload, baseUrl);
+  await exportFns[type](config, payload, baseUrl);
 };

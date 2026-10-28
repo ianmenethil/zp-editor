@@ -20,7 +20,6 @@ import type {
 import { pkgInfoService } from '../../services/pkgInfo';
 import { cloneObject, getRandomString, loadScript } from '../../utils/utils';
 import {
-  // codeiumProviderUrl,
   emmetMonacoUrl,
   monacoBaseUrl,
   monacoEmacsUrl,
@@ -35,12 +34,20 @@ import { registerTwoSlash } from './register-twoslash';
 
 type Options = Monaco.editor.IStandaloneEditorConstructionOptions;
 
+// undo/redo are not part of the public ITextModel API — used by the editor actions
+type ModelWithUndo = Monaco.editor.ITextModel & { undo?: () => void; redo?: () => void };
+
 let monacoGloballyLoaded = false;
 const disposeEmmet: { html?: any; css?: any; jsx?: any; disabled?: boolean } = {};
+// globals set by loaded vendor scripts — typed instead of `any`
+type EditorWindow = Window & {
+  monaco?: typeof Monaco;
+  emmetMonaco?: unknown;
+};
+const editorWindow = window as unknown as EditorWindow;
 let monaco: typeof Monaco;
 const loadedLanguages = new Set<Language>();
 const loadedThemes = new Set<string>();
-// let codeiumProvider: { dispose: () => void } | undefined;
 let editors: Monaco.editor.IStandaloneCodeEditor[] = [];
 let tailwindcssConfig: any;
 
@@ -81,8 +88,8 @@ export const createEditor = async (options: EditorOptions): Promise<CodeEditor> 
   const baseOptions = convertOptions(options);
 
   try {
-    (window as any).monaco = (window as any).monaco || (await loadMonaco()).monaco;
-    monaco = (window as any).monaco;
+    editorWindow.monaco = editorWindow.monaco || (await loadMonaco()).monaco;
+    monaco = editorWindow.monaco;
   } catch {
     throw new Error('Failed to load monaco editor');
   }
@@ -522,7 +529,7 @@ export const createEditor = async (options: EditorOptions): Promise<CodeEditor> 
   const format = async () => editor.getAction('editor.action.formatDocument')?.run();
 
   const configureEmmet = (enabled: boolean) => {
-    if (!enabled && !(window as any).emmetMonaco) return;
+    if (!enabled && !editorWindow.emmetMonaco) return;
 
     loadScript(emmetMonacoUrl, 'emmetMonaco').then((emmetMonaco: any) => {
       if (enabled) {
@@ -583,15 +590,14 @@ export const createEditor = async (options: EditorOptions): Promise<CodeEditor> 
     configureEditorMode(settings.editorMode);
     editor.updateOptions(editorOptions);
     setTheme(settings.theme, settings.editorTheme);
-    // configureCodeium(settings.enableAI);
   };
 
   const undo = () => {
-    (editor.getModel() as any)?.undo?.();
+    (editor.getModel() as ModelWithUndo | null)?.undo?.();
   };
 
   const redo = () => {
-    (editor.getModel() as any)?.redo?.();
+    (editor.getModel() as ModelWithUndo | null)?.redo?.();
   };
 
   const getPosition = (): EditorPosition => {
@@ -633,28 +639,6 @@ export const createEditor = async (options: EditorOptions): Promise<CodeEditor> 
       await editor.getAction('editor.createFoldingRangeFromSelection')?.run();
     }
   };
-
-  // const configureCodeium = (enabled: boolean) => {
-  //   if (!enabled) {
-  //     codeiumProvider?.dispose();
-  //     codeiumProvider = undefined;
-  //     return;
-  //   }
-
-  //   // already loaded or loading
-  //   if (codeiumProvider) {
-  //     return;
-  //   }
-
-  //   // avoid race condition between different editors
-  //   codeiumProvider = { dispose: () => 'loading...' };
-
-  //   import(codeiumProviderUrl).then((codeiumModule) => {
-  //     codeiumProvider = codeiumModule.registerCodeiumProvider(monaco, {
-  //       getEditors: () => editors,
-  //     });
-  //   });
-  // };
 
   const destroy = () => {
     editors = editors.filter((e) => e !== editor);

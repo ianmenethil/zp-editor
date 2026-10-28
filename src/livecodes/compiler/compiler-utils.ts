@@ -5,7 +5,14 @@ import type { InitMessage } from './models';
 
 proxyConsole();
 
-(window as any).initCompiler = async (message: InitMessage) => {
+// window extensions used by the compiler page — typed instead of `any`
+type CompilerWindow = Window & {
+  initCompiler?: (message: InitMessage) => Promise<void>;
+  compilers?: Record<string, (code: string, options: unknown) => Promise<string>>;
+};
+const compilerWindow = window as unknown as CompilerWindow;
+
+compilerWindow.initCompiler = async (message: InitMessage) => {
   const baseUrl = message.baseUrl;
   const workerUrl = baseUrl + '{{hash:compile.worker.js}}';
   const origin = new URL(baseUrl).origin;
@@ -20,17 +27,12 @@ proxyConsole();
   });
 
   worker.addEventListener('message', async function (ev) {
-    if (ev.data.type === 'compileInCompiler') {
-      // compile message sent from compiler (e.g ts in vue)
-      worker.postMessage(ev.data);
-      return;
-    }
     if (
       ev.data.payload &&
-      (window as any).compilers &&
-      (window as any).compilers[ev.data.payload.language]
+      compilerWindow.compilers &&
+      compilerWindow.compilers[ev.data.payload.language]
     ) {
-      ev.data.payload.compiled = await (window as any).compilers[ev.data.payload.language](
+      ev.data.payload.compiled = await compilerWindow.compilers[ev.data.payload.language](
         ev.data.payload.compiled,
         {
           config: ev.data.payload.config,

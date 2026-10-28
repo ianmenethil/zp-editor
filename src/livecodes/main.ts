@@ -108,11 +108,7 @@ export const livecodes = (container: string, config: Partial<Config> = {}): Prom
           )
           .replace(/{{codemirrorCoreUrl}}/g, `${codeMirrorBaseUrl}codemirror-core.js`)
           .replace(/{{creltUrl}}/g, creltUrl)
-          .replace(/src="[^"]*?\.svg"/g, (str: string) => (isHeadless ? 'src=""' : str))
-          .replace(
-            /{{codeiumMeta}}/g,
-            `<meta name="codeium:type" content="${disableAI ? 'none' : 'monaco'}" />`,
-          );
+          .replace(/src="[^"]*?\.svg"/g, (str: string) => (isHeadless ? 'src=""' : str));
 
         iframe.contentWindow?.postMessage({ content: appContent }, location.origin);
         contentLoaded = true;
@@ -184,7 +180,9 @@ export const livecodes = (container: string, config: Partial<Config> = {}): Prom
             const methodArguments = Array.isArray(args) ? args : [args];
             let payload: any;
             try {
-              payload = await (api[method] as any)(...methodArguments);
+              payload = await (api[method] as (...args: never[]) => Promise<unknown>)(
+                ...methodArguments,
+              );
             } catch (error: any) {
               payload = { error: error.message || error };
             }
@@ -217,7 +215,7 @@ export const livecodes = (container: string, config: Partial<Config> = {}): Prom
       );
 
       iframe.addEventListener('load', async () => {
-        const app = (iframe.contentWindow as any)?.app;
+        const app = (iframe.contentWindow as { app?: unknown })?.app;
         if (typeof app === 'function') {
           api = (await app(config, baseUrl)) as API;
           if (!isHeadless) {
